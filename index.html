@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SY2N-Web | Nathan Fernandes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h1 class="popup-heading">Bonjour, je suis Nathan Fernandes</h1>
+      <p class="popup-text">Jeune développeur de site web, expérimenté en HTML, CSS, JAVASCRIPT.</p>
+      <button class="popup-close" onclick="closePopup()">En savoir plus</button>
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="work.html">Mon Travail</a></li>
+        <li><a href="contact.html">Contactez-moi</a></li>
+      </ul>
+    </nav>
+    <div class="banner"></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Bienvenue chez SY2N-Web</h1>
+      <p>Entreprise de développement web</p>
+      <p style="font-size: 0.8em;">Fondé par Fernandes Nathan</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Qui je suis</div>
+          <div class="card-back">
+            <button onclick="location.href='presentation.html'">Présentation</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Mon travail</div>
+          <div class="card-back">
+            <button onclick="location.href='work.html'">Mon travail</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Contactez-moi</div>
+          <div class="card-back">
+            <button onclick="location.href='contact.html'">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      localStorage.setItem('popupShown', 'true');
+    }
+
+    window.onload = function() {
+      if (!localStorage.getItem('popupShown')) {
+        document.getElementById('popup').style.display = 'flex';
+      }
+    }
+  </script>
+</body>
+</html>
